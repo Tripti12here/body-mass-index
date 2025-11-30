@@ -1,141 +1,186 @@
+/* Base Styles */
 * {
-    font-family: Quicksand;
-    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
     color: #333;
 }
+
 body {
-    margin: 0;
-    height: 100vh;
-    padding: 0;
-    border: 0;
-    background: linear-gradient(to bottom right, #b5f2ea, #eef3f3);
-}
-.form {
-    background-color: #fff;
-    height: 240px;
-    width: 450px;
-    border-radius: 20px;
-    margin: 20px auto 20px auto;
-    display: block;
-    border: solid 1px #289df6;
-    box-shadow: 0 0 40px 0 #ddd;
-}
-.form:hover {
-    box-shadow: 0 0 60px 0 #ccc;
-    transition: 0.4s;
-    transform: scale(1.02);
-}
-.row-one {
+    /* Light blue gradient background */
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 20px;
 }
-.row-two {
-    padding: 20px;
+
+/* Main Card Style */
+.calculator-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease;
 }
-.text-input {
-    width: 60px;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #dbeffe;
-    border: none;
-    outline: none;
-    padding: 5px 10px;
-    cursor: pointer;
+
+.calculator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
-.text-input:last-child {
-    margin-bottom: 35px;
+
+/* Typography */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4a90e2;
+    text-align: center;
+    margin-bottom: 30px;
 }
-.text-input:hover {
-    background-color: #cbe7fd;
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 20px;
 }
-#submit {
-    border: none;
-    border-radius: 10px;
-    height: 40px;
-    width: 140px;
-    background-color: #289df6;
-    color: #fff;
-    margin: auto;
+
+.input-group label {
     display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
     outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Gender Group (Radio buttons) */
+.gender-group {
+    margin-bottom: 25px;
+}
+
+.gender-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.radio-options {
+    display: flex;
+    gap: 25px;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    font-size: 1rem;
 }
-#submit:hover {
-    background-color: #0a8ef2;
-}
-.text {
-    display: inline-block;
-    margin: 5px 20px 5px 8px;
-}
-.row-one {
-    padding: 30px 20px 15px 20px;
-}
-.row-two {
-    padding: 15px 20px 30px 20px;
-}
-.container {
-    display: inline-block;
-    position: relative;
-    padding-left: 30px;
-    cursor: pointer;
-    user-select: none;
-}
-.container input {
+
+.radio-container input[type="radio"] {
     position: absolute;
     opacity: 0;
 }
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #dbeffe;
+
+.custom-radio {
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
     border-radius: 50%;
+    margin-right: 10px;
+    border: 3px solid #ccc;
+    transition: background-color 0.3s, border-color 0.3s;
 }
-.container:hover input ~ .checkmark {
-    background-color: #cbe7fd;
+
+.radio-container input[type="radio"]:checked ~ .custom-radio {
+    background-color: #4a90e2;
+    border-color: #fff;
+    box-shadow: 0 0 0 2px #4a90e2;
 }
-.container input:checked ~ .checkmark {
-    background-color: #289df6;
-}
-h1 {
-    font-size: 30px;
-    font-weight: 300;
-    text-align: center;
-    color: #289df6;
-    padding-top: 15px;
-    display: block;
-}
-h2 {
-    font-size: 22px;
-    font-weight: 300;
-    text-align: center;
-}
-h3 {
-    font-size: 24px;
-    font-weight: 300;
-    text-align: center;
+
+/* Submit Button */
+#submit {
+    width: 100%;
     padding: 15px;
+    background-color: #4a90e2;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
 }
-h3 b {
-    font-size: 32px;
-    font-weight: 300;
-    color: #289df6;
+
+#submit:hover {
+    background-color: #3b7ad0;
 }
-.checkmark:after {
-    content: "";
-    position: absolute;
+
+#submit:active {
+    transform: scale(0.98);
+}
+
+/* Result Box */
+.result-box {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #f0f8ff; /* Light blue background for result */
+    border: 1px solid #c2e9fb;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.result-box h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.result-box h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3b7ad0;
+    margin: 5px 0 10px 0;
+}
+
+.result-box p {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Error Message */
+.error-message {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #fdd;
+    color: #d00;
+    border: 1px solid #f99;
+    font-weight: 500;
+    text-align: center;
+}
+
+.hidden {
     display: none;
-}
-.container input:checked ~ .checkmark:after {
-    display: block;
-}
-.container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
 }
