@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern BMI Calculator</title>
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div class="calculator-card">
+        <h1>Body Mass Index (BMI) Calculator</h1>
+        
+        <!-- Error Message Display -->
+        <div id="error-message" class="error-message hidden">
+            Please fill all fields and ensure the values are correct.
+        </div>
+
+        <form id="form">
+            
+            <!-- Age Input Group -->
+            <div class="input-group">
+                <label for="age">Age (in years)</label>
+                <input type="number" id="age" min="1" max="120" placeholder="e.g., 25" required>
+            </div>
+            
+            <!-- Gender Selection Group -->
+            <div class="gender-group">
+                <label>Select Gender:</label>
+                <div class="radio-options">
+                    <label class="radio-container">
+                        <input type="radio" name="gender" id="f" required>
+                        <span class="custom-radio"></span>
+                        Female
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="gender" id="m">
+                        <span class="custom-radio"></span>
+                        Male
+                    </label>
+                </div>
+            </div>
+
+            <!-- Height Input Group -->
+            <div class="input-group">
+                <label for="height">Height (in cm)</label>
+                <input type="number" id="height" min="50" max="300" placeholder="e.g., 175" required>
+            </div>
+
+            <!-- Weight Input Group -->
+            <div class="input-group">
+                <label for="weight">Weight (in kg)</label>
+                <input type="number" id="weight" min="1" max="500" placeholder="e.g., 70" required>
+            </div>
+            
+            <button type="button" id="submit">Calculate BMI</button>
+        </form>
+
+        <!-- Result Display -->
+        <div id="result-box" class="result-box hidden">
+            <!-- Results will be displayed here by script.js -->
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file (script.js) -->
+    <script src="script.js"></script>
+</body>
+</html>
